@@ -113,8 +113,7 @@ class ConcreteDropout(nn.Module):
         random_tensor = 1 - drop_prob
         retain_prob = 1 - self.p
 
-        x = torch.mul(x, random_tensor)
-        x /= retain_prob
+        x = torch.mul(x, random_tensor) / retain_prob
 
         return x
 

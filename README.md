@@ -50,6 +50,8 @@ An example of `ConcreteDropout` has been implemented in
 python3 mnist_example.py
 ```
 
+![MNIST Results](./misc/cdr_mnist.png)
+
 ## **References:**
 
 ```

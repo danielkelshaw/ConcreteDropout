@@ -65,4 +65,5 @@ python3 mnist_example.py
 }
 ```
 
+##### **[Code](https://github.com/yaringal/ConcreteDropout)** by Yarin Gal, author of the paper.
 ###### PyTorch implementation of **[Concrete Dropout](https://arxiv.org/pdf/1705.07832)**<br>Made by Daniel Kelshaw

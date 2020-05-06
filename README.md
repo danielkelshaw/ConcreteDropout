@@ -1,4 +1,4 @@
-# ConcreteDropout
+![Concrete Dropout](./misc/condrop.png)
 
 [![Build Status](https://travis-ci.org/danielkelshaw/ConcreteDropout.svg?branch=master)](https://travis-ci.org/danielkelshaw/ConcreteDropout)
 

@@ -28,15 +28,15 @@ regularisation term to the loss function which is dependant on the KL
 Divergence, `KL[q(w)||p(w)]`; this ensures that the posterior does not 
 deviate too far from the prior. As is often the case, the KL Divergence 
 is computationally intractable and as such an approximation is developed - 
-details of this can be seen in eqns. [2-4] in the [paper](https://arxiv.org/pdf/1705.07832).
+details of this can be seen in equations [2-4] in the [paper](https://arxiv.org/pdf/1705.07832).
 
 In typical dropout the probability is modelled as a Bernoulli random
-variable - this does not play well with the re-parameterisation trick
-which is required to calculate the derivative of the objective. To allow
-the derivative to be calculated, a continous relaxation of the discrete
+variable - unfortunately this does not play well with the re-parameterisation 
+trick which is required to calculate the derivative of the objective. To 
+allow the derivative to be calculated, a continous relaxation of the discrete
 Bernoulli distribution is used - specifically the *Concrete* distribution
 relaxation. This has a simple parameterisation which reduces to a simple
-sigmoid distribution as seen in eqn [5].
+sigmoid distribution as seen in equation [5].
 
 Through use of the *Concrete* relaxation it is now possible to compute
 the derivatives of the objective with help from the re-parameterisation
@@ -65,4 +65,5 @@ python3 mnist_example.py
 }
 ```
 
+##### **[Code](https://github.com/yaringal/ConcreteDropout)** by Yarin Gal, author of the paper.
 ###### PyTorch implementation of **[Concrete Dropout](https://arxiv.org/pdf/1705.07832)**<br>Made by Daniel Kelshaw

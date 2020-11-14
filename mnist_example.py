@@ -39,7 +39,7 @@ class MLPConcreteDropout(nn.Module):
         x = self.cd1(x, nn.Sequential(self.fc1, self.relu))
         x = self.cd2(x, nn.Sequential(self.fc2, self.relu))
         x = self.cd3(x, nn.Sequential(self.fc3, self.relu))
-        x = self.cd4(x, nn.Sequential(self.fc4, self.softmax))
+        x = self.cd4(x, self.fc4)
 
         return x
 
@@ -76,10 +76,12 @@ def test(model, testloader, device):
         data, labels = data.to(device), labels.to(device)
 
         outputs = model(data)
+        p_outputs = F.softmax(outputs)
+
         loss = F.cross_entropy(outputs, labels)
         test_loss += loss.item() * data.size(0)
-
-        preds = outputs.argmax(dim=1, keepdim=True)
+        
+        preds = p_outputs.argmax(dim=1, keepdim=True)
         correct += preds.eq(labels.view_as(preds)).sum().item()
 
     test_loss /= len(testloader.dataset)
